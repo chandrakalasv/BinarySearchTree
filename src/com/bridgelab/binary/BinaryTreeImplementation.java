@@ -27,6 +27,22 @@ public class BinaryTreeImplementation<K extends Comparable> implements IBinary<K
     public int size() {
         return getSizeRecursively(root);
     }
+
+    @Override
+    public INode<K> search(K key) {
+        return searchRecursive(root, key);
+    }
+    public INode<K> searchRecursive(INode<K> root, K key) {
+        if(root == null || root.key == key) {
+            return root;
+        }
+        if (root.key.compareTo(key) > 0) {
+            return searchRecursive(root.left, key);
+        } else {
+            return searchRecursive(root.right, key);
+        }
+    }
+
     int count;
     public int getSizeRecursively(INode<K> root) {
         if (root == null) {

@@ -18,5 +18,7 @@ public class BinaryTreeMain {
         binary.add(63);
         binary.add(67);
         System.out.println(binary.size());
+        System.out.println(binary.search(63));
+        System.out.println(binary);
     }
 }
