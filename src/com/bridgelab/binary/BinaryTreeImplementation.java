@@ -23,6 +23,21 @@ public class BinaryTreeImplementation<K extends Comparable> implements IBinary<K
         }
         return root;
     }
+    @Override
+    public int size() {
+        return getSizeRecursively(root);
+    }
+    int count;
+    public int getSizeRecursively(INode<K> root) {
+        if (root == null) {
+         return  count += 0;
+        } else {
+            count += 1;
+        }
+        getSizeRecursively(root.left);
+        getSizeRecursively(root.right);
+        return count;
+    }
 
     @Override
     public String toString() {
